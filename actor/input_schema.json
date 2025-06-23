@@ -1,0 +1,23 @@
+{
+  "title": "YouTube Downloader Input",
+  "description": "Provide the YouTube video URL and select type (audio/video)",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "videoUrl": {
+      "type": "string",
+      "title": "YouTube Video URL",
+      "description": "Paste the full YouTube video link",
+      "editor": "textfield"
+    },
+    "type": {
+      "type": "string",
+      "title": "Download Type",
+      "description": "Choose between audio (128K M4A) or video (360p MP4)",
+      "enum": ["audio", "video"],
+      "default": "audio",
+      "editor": "select"
+    }
+  },
+  "required": ["videoUrl"]
+}
