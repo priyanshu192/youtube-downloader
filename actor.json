@@ -1,0 +1,17 @@
+{
+  "actorSpecification": 1,
+  "name": "youtube-downloader",
+  "title": "YouTube Audio/Video Downloader (M4A/360p)",
+  "description": "Paste a YouTube video URL and get a direct audio (128K M4A) or video (360p) download link.",
+  "version": "1.0",
+  "main": "main.js",
+  "build": {
+    "script": "npm install --omit=dev"
+  },
+  "env": {},
+  "defaultRunOptions": {
+    "build": true,
+    "memoryMbytes": 2048,
+    "timeoutSecs": 120
+  }
+}
