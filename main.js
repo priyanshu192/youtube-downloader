@@ -1,4 +1,4 @@
- import { Actor } from 'apify';
+import { Actor } from 'apify';
 import axios from 'axios';
 
 await Actor.init();
@@ -18,11 +18,15 @@ try {
             url: videoUrl,
             type: type || 'audio',
             apikey: process.env.MY_SECRET_KEY
-        }
+        },
+        responseType: 'json' // ✅ must set this
     });
 
     console.log("✅ API call successful");
-    console.log("📤 Response from API:", response.data);  // 👈 ye missing hai
+    console.log("📤 Headers:", response.headers);
+    console.log("📤 Response type:", typeof response.data);
+    console.log("📤 Response from API:", response.data);
+
     await Actor.setValue("OUTPUT", response.data);
 
 } catch (err) {
