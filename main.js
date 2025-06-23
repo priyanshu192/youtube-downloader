@@ -19,15 +19,16 @@ try {
             type: type || 'audio',
             apikey: process.env.MY_SECRET_KEY
         },
-        responseType: 'json' // ✅ must set this
+        responseType: 'json'
     });
 
     console.log("✅ API call successful");
-    console.log("📤 Headers:", response.headers);
-    console.log("📤 Response type:", typeof response.data);
     console.log("📤 Response from API:", response.data);
 
-    await Actor.setValue("OUTPUT", response.data);
+    await Actor.setValue("OUTPUT", {
+        contentType: "application/json",
+        body: response.data,
+    });
 
 } catch (err) {
     console.error("❌ Error:", err.message);
