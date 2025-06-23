@@ -1,4 +1,4 @@
-import { Actor } from 'apify';
+ import { Actor } from 'apify';
 import axios from 'axios';
 
 await Actor.init();
@@ -22,6 +22,7 @@ try {
     });
 
     console.log("✅ API call successful");
+    console.log("📤 Response from API:", response.data);  // 👈 ye missing hai
     await Actor.setValue("OUTPUT", response.data);
 
 } catch (err) {
