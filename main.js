@@ -25,10 +25,12 @@ try {
     console.log("✅ API call successful");
     console.log("📤 Response from API:", response.data);
 
-    await Actor.setValue("OUTPUT", {
+    await Actor.setValue("default", {
         contentType: "application/json",
         body: response.data,
     });
+
+    // await Actor.pushData(response.data);
 
 } catch (err) {
     console.error("❌ Error:", err.message);
