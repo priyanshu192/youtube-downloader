@@ -16,7 +16,8 @@ try {
     const response = await axios.get("https://priyanshuapi.xyz/youtube", {
         params: {
             url: videoUrl,
-            type: type || 'audio'
+            type: type || 'audio',
+            apikey: process.env.MY_SECRET_KEY
         }
     });
 
